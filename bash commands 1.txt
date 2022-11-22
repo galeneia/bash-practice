@@ -1,0 +1,71 @@
+1. galeneia@SurfacePC:~$ pwd
+/home/galeneia
+2. galeneia@SurfacePC:~$ mkdir test1
+galeneia@SurfacePC:~$ ls
+doc2.txt  file1.txt  file_1  test  test1
+3. galeneia@SurfacePC:~$ cd test1
+galeneia@SurfacePC:~/test1$ pwd
+/home/galeneia/test1
+4. galeneia@SurfacePC:~/test1$ touch file1.txt
+galeneia@SurfacePC:~/test1$ touch file2.txt
+galeneia@SurfacePC:~/test1$ touch file3.txt
+5. galeneia@SurfacePC:~/test1$ ls
+file1.txt  file2.txt  file3.txt
+6. galeneia@SurfacePC:~/test1$ cd ~
+galeneia@SurfacePC:~$ mkdir test2
+galeneia@SurfacePC:~$ ls
+doc2.txt  file1.txt  file_1  test  test1  test2
+7. galeneia@SurfacePC:~$ rmdir test2
+galeneia@SurfacePC:~$ ls
+doc2.txt  file1.txt  file_1  test  test1
+8. galeneia@SurfacePC:~$ cd test1
+galeneia@SurfacePC:~/test1$ rm file2.txt
+galeneia@SurfacePC:~/test1$ ls
+file1.txt  file3.txt
+9. galeneia@SurfacePC:~/test1$ cd ~
+galeneia@SurfacePC:~$ mkdir test3
+galeneia@SurfacePC:~$ cd ~/test3
+galeneia@SurfacePC:~/test3$ touch text1.txt text2.txt
+galeneia@SurfacePC:~/test3$ ls
+text1.txt  text2.txt
+10. galeneia@SurfacePC:~$ rmdir test3
+rmdir: failed to remove 'test3': Directory not empty
+galeneia@SurfacePC:~$ rm -R test3
+galeneia@SurfacePC:~$ ls
+doc2.txt  file1.txt  file_1  test  test1
+11. galeneia@SurfacePC:~$ mkdir test4
+galeneia@SurfacePC:~$ ls
+doc2.txt  file1.txt  file_1  test  test1  test4
+12. galeneia@SurfacePC:~$ mv test1/file1.txt test4
+galeneia@SurfacePC:~$ mv test1/file3.txt test4
+galeneia@SurfacePC:~$ ls
+doc2.txt  file_1  test  test1  test4
+galeneia@SurfacePC:~$ cd test4
+galeneia@SurfacePC:~/test4$ ls
+file1.txt  file3.txt
+13. galeneia@SurfacePC:~/test4$ nano file1.txt
+14. galeneia@SurfacePC:~/test4$ cat file1.txt
+line
+line
+line
+15. galeneia@SurfacePC:~/test4$ nano file3.txt
+galeneia@SurfacePC:~/test4$ cat file3.txt
+line1
+line2
+line3
+16. galeneia@SurfacePC:~/test4$ cat file1.txt file3.txt
+line
+line
+line
+line1
+line2
+line3
+17. galeneia@SurfacePC:~/test4$ vi file1.txt file3.txt
+2 files to edit
+galeneia@SurfacePC:~/test4$ cat file1.txt file3.txt
+line is changed 1
+line is changed 2
+line is changed 3
+line1 is changed too
+line2 is changed again
+line3 is changed also

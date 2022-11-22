@@ -1,0 +1,88 @@
+1. galeneia@SurfacePC:~/test4$ cd ~
+galeneia@SurfacePC:~$ mkdir test3
+galeneia@SurfacePC:~$ ls
+doc2.txt  file_1  test  test1  test3  test4
+2. galeneia@SurfacePC:~$ cd test3
+galeneia@SurfacePC:~/test3$ touch file4.txt file5.txt file6.txt
+galeneia@SurfacePC:~/test3$ ls
+file4.txt  file5.txt  file6.txt
+galeneia@SurfacePC:~/test3$ nano file4.txt file5.txt file6.txt
+galeneia@SurfacePC:~/test3$ cat file4.txt file5.txt file6.txt
+row1
+row2
+row3
+row4
+row1
+row2
+row3
+row4
+row1
+row2
+row3
+row4
+3. galeneia@SurfacePC:~/test3$ grep row2 file5.txt
+row2
+4. galeneia@SurfacePC:~/test3$ grep row -R
+file4.txt:row1
+file4.txt:row2
+file4.txt:row3
+file4.txt:row4
+file5.txt:row1
+file5.txt:row2
+file5.txt:row3
+file5.txt:row4
+file6.txt:row1
+file6.txt:row2
+file6.txt:row3
+file6.txt:row4
+5. galeneia@SurfacePC:~/test3$ grep row -c file6.txt
+4
+6. galeneia@SurfacePC:~/test3$ cd ~
+galeneia@SurfacePC:~$ find . -name file5.txt
+./test3/file5.txt
+7. galeneia@SurfacePC:~$ cd test3
+galeneia@SurfacePC:~/test3$ find . -name file4.txt -delete
+galeneia@SurfacePC:~/test3$ ls
+file5.txt  file6.txt
+8. galeneia@SurfacePC:~/test3$ echo -e "row1\nrow2\nrow3\nrow4\nTest" > file4.txt
+galeneia@SurfacePC:~/test3$ cat file4.txt
+row1
+row2
+row3
+row4
+Test
+9. galeneia@SurfacePC:~/test3$ nano file4.txt
+galeneia@SurfacePC:~/test3$ cat file4.txt
+row1
+row2
+row3
+row4
+fail
+10. galeneia@SurfacePC:~/test3$ nano file4.txt
+galeneia@SurfacePC:~/test3$ cat file4.txt
+row1
+row2
+row3
+row4
+fail
+test 
+11. galeneia@SurfacePC:~/test3$ ps x
+  PID TTY      STAT   TIME COMMAND
+   56 tty1     S      0:01 -bash
+  214 tty1     R      0:00 ps x
+12. galeneia@SurfacePC:~$ kill 666
+-bash: kill: (666) - No such process
+13. galeneia@SurfacePC:~$ ping artsiomrusau.com
+PING artsiomrusau.com (185.215.4.92) 56(84) bytes of data.
+^C
+--- artsiomrusau.com ping statistics ---
+34 packets transmitted, 0 received, 100% packet loss, time 33037ms
+14. galeneia@SurfacePC:~$ ping -c 5 artsiomrusau.com
+PING artsiomrusau.com (185.215.4.92) 56(84) bytes of data.
+^C
+--- artsiomrusau.com ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 4003ms
+15. galeneia@SurfacePC:~$ curl -X GET https://petstore.swagger.io/v2/pet/123
+{"id":123,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"} 
+16. galeneia@SurfacePC:~$ curl -X POST https://petstore.swagger.io/v2/user --header "Content-Type: application/json" --data '{"id": 0,  "username": "string",  "firstName": "string",  "lastName": "string",  "email": "string",  "password": "string",  "phone": "string",  "userStatus": 0 }'
+{"code":200,"type":"unknown","message":"9223372000000217713"} 
